@@ -1,0 +1,663 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+html {
+    font-size: 62.5%;
+    font-family: "Roboto Regular";
+}
+body {
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+    margin-right: 2em;
+    margin-left: 2em;
+}
+.background-home {
+    background-image: url(../assets/img/jay-frontpage.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-y: -10em;
+    height: 100vh;
+}
+.logo-header {
+    width: 100%;
+}
+nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    margin: 5px;
+    list-style-type: none;
+    font-size: 170%;
+    height: 120px;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+a:hover {
+    color: gray;
+}
+.search-bar {
+    width: 100%;
+}
+.form-control {
+    opacity: 70%;
+    border-color: white;
+}
+.btn {
+    height: 28.25px;
+    top: 8px;
+}
+.bi-search {
+    width: 12px;
+}
+p {
+    font-size: 16px;
+    margin-bottom: 16px;
+    line-height: 30px;
+    padding: 10px;
+}
+.main-frontpage {
+    margin-top: 1.5em;
+}
+.welcome {
+    background-color: rgba(0, 0, 0, 0.267);
+    border-radius: 5px;
+}
+.video-frontpage {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-right: 20px;
+    padding-left: 20px;
+    height: 0;
+    opacity: 80%;
+    overflow: hidden;
+    border: 1px solid white;
+    border-radius: 2px;
+    opacity: 80%;
+}
+.video-frontpage iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.news-section {
+    background-color: rgba(0, 0, 0, 0.267);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: flex-start;
+}
+.news-block {
+    display: flex;
+    flex-direction: column;;
+    padding: 10px;
+}
+.text-alt {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 15px;
+    line-height: 25px;
+}
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.footer-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+    width: 60%;
+}
+svg {
+    justify-content: center;
+    width: 35%;
+}
+.anchor-footer {
+    display: flex;
+    justify-content: center;
+}
+.copyright {
+    height: 100px;
+    margin: 1.5em;
+    font-size: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.box-mailing {
+    height: 50px;
+    margin-right: 1.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+.mailing { 
+    font-size: 10px;   
+    padding: 5px;
+    background-image: url(../assets/img/gradient_buttons.svg);
+    opacity: 50%;
+    background-size: cover;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mailing:hover {
+    opacity: 100%;
+    border-color: gray;
+}
+.mailing {
+    transition: 1s;
+}
+.text-mail {
+    font-size: 10px;
+}
+
+/* Declaración de Áreas */
+header {
+    grid-area: header;    
+}
+nav {
+    grid-area: nav;
+}
+.search-bar {
+    grid-area: search;
+}
+.main-frontpage {
+    grid-area: main;
+}
+.welcome {
+    grid-area: welcome;
+}
+.video-frontpage {
+    grid-area: video;
+}
+.news-section {
+    grid-area: news;
+}
+.box-mailing {
+    grid-area: mail;
+}
+footer {
+    grid-area: footer;
+}
+.background-home {
+    display: grid;
+    gap: 20px;
+    grid-template-areas:
+    "header"
+    "nav"
+    "search"
+    "main"
+    "mail"
+    "footer";
+    grid-template-rows: auto;
+}
+
+@media (min-width: 480px) {
+    nav ul {
+        height: 150px;
+    }
+    .search-bar {
+        width: 70%;
+    }
+    li {
+        font-size: 110%;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    p {
+        font-size: 18px;
+        line-height: 35px;
+    }
+    .mailing {
+        font-size: 13px;
+    }
+    .text-mail {
+        font-size: 13px;
+    }
+    .copyright {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 600px) {
+    nav ul {
+        height: 180px;
+    }
+    p {
+        font-size: 20px;
+        line-height: 38px;
+    }
+    .mailing {
+        font-size: 12px;
+    }
+    .text-mail {
+        font-size: 12px;
+    }
+    .footer-icons {
+        width: 50%;
+    }
+    .copyright {
+        font-size: 12px;
+        padding-bottom: 1.5em;
+        justify-content: space-around;
+    }
+}
+
+@media (min-width: 768px) {
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    nav ul {
+        font-size: 200%;
+        height: 50px;
+        display: flex;
+        flex-direction: row;
+    }
+    ul li {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    ul {
+        width: 70%;
+    }
+    .search-bar {
+        width: 60%;
+    }
+    .main-frontpage {
+        display: grid;
+        grid-template-areas:
+        "welcome  news"
+        "video    news";
+        grid-template-rows: auto;
+        grid-template-columns: 40% 40%;
+        grid-column-gap: 20%;
+    }
+    .footer-icons {
+        width: 40%;
+    }
+    .anchor-footer:hover {
+        transform: scale(1.5);
+        transition: 1s;
+    }
+    .copyright {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .main-frontpage {
+        grid-template-rows: auto;
+    }
+    .search-bar {
+        width: 40%;
+        margin-bottom: 1.5em;
+    }
+    nav {
+        margin-bottom: 1.5em;
+    }
+    .footer-icons {
+        width: 30%;
+    }
+}
+
+/* BIO */
+.background-bio {
+    background-image: url(../assets/img/jay-bio.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    background-position-x: -180px;
+    height: 100vh;
+}
+.main-bio {
+    margin-top: 1.5em;
+}
+.bio-section {
+    background-color: rgba(0, 0, 0, 0.267);
+    border-radius: 5px;
+}
+.team-section {
+    margin-top: 20px;
+    margin-left: 0;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.473);
+    display: flex;
+    flex-direction: column;
+}
+.team-block {
+    padding: 10px;
+}
+.image-team {
+    width: 100px;
+    height: 120px;
+    object-fit: cover;
+    margin-left: 12px;
+    padding: 5px;
+    float: right;
+}
+.team-block {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    line-height: 20px;
+}
+
+/* Declaración de Áreas */
+.main-bio {
+    grid-area: bio;
+}
+.bio-section {
+    grid-area: bio-section;
+}
+.team-section {
+    grid-area: team-section;
+}
+
+.background-bio {
+    display: grid;
+    gap: 20px;
+    grid-template-areas: 
+    "header"
+    "nav"
+    "search"
+    "bio"
+    "mail"
+    "footer";
+    grid-template-rows: auto;
+}
+
+@media (min-width: 480px) {
+    .background-bio {
+        background-position-x: -120px;
+    }
+}
+
+@media (min-width: 600px) {
+    .background-bio {
+        background-position-x: -50px;
+    }
+}
+
+@media (min-width: 768px) {
+    .background-bio {
+    background-position-x: center;
+    }
+    .main-bio {
+        display: grid;
+        grid-template-areas: 
+        "bio-section team-section";
+        grid-template-rows: auto;
+        grid-template-columns: 40% 30%;
+        grid-column-gap: 30%;
+    }
+    .team-section {
+        border: none;
+        background-color: rgba(0, 0, 0, 0.267);
+        border-radius: 5px;
+        padding-top: 0;
+        margin-top: 150px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .team-section {
+        margin-top: 280px;
+    }
+}
+
+/* CONCIERTOS */
+
+.background-concerts {
+    background-image: url(../assets/img/jay-conciertos.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-y: 180px;
+    background-position-x: center;
+    height: 100vh;
+}
+.main-concerts {
+    background-color: rgba(0, 0, 0, 0.253);
+    border-radius: 15px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;    
+}
+.concerts-list {
+    line-height: 30px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    }
+.concerts-list .contain {
+    font-size: 12px;
+    padding-left: 15px;
+}
+.ticket-reserve {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-style: italic;
+}
+
+/* Declaración de Áreas */
+.main-concerts {
+    grid-area: concerts;
+}
+.background-concerts {
+    display: grid;
+    gap: 20px;
+    grid-template-areas:
+    "header"
+    "nav"
+    "search" 
+    "concerts"
+    "block-concerts"
+    "mail"
+    "footer";
+    grid-row: auto;
+}
+
+@media (min-width: 480px) {
+    }
+    .concerts-list {
+        font-size: 15px
+    }
+
+@media (min-width: 600px) {
+    .main-concerts {
+        width: 500px;
+    }
+    .concerts-list {
+        font-size: 16px
+    } 
+}
+
+@media (min-width: 768px) {
+    .concerts-list {
+        font-size: 17px
+        }
+    }
+
+@media (min-width: 1024px) {
+    .concerts-list {
+        font-size: 18px
+    }
+}
+
+
+/* GALERÍA */
+.background-gallery {
+    background-image: url(../assets/img/jay-galeria.png);
+    background-size: 400px;
+    background-repeat: no-repeat;
+    background-position-x: 420px;
+    height: 1450px;
+}
+.main-gallery {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.title-gallery {
+    color: black;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.container-photos {
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.521);
+    border-radius: 5px;
+    width: 400px;
+    padding: 30px;
+}
+ul, li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+ul.slider {
+    position: relative;
+    width: 390px;
+    height: 600px;
+}
+ul.slider li {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+    width: inherit;
+    height: inherit;
+    transition: opacity 0.8s;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: rgb(65, 65, 65);
+}
+ul.slider li img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+ul.slider li:first-child {
+    opacity: 1; 
+}
+ul.slider li:target {
+    opacity: 1;
+}
+.menu {
+    text-align: center;
+    margin: 20px;
+}
+.menu li {
+    display: inline-block;
+    text-align: center;
+}
+.menu li a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    background: linear-gradient(black, white);
+    padding: 10px;
+    width: 15px;
+    height: 15px;
+    font-size: 15px;
+    border-color: black;
+    border-style: inset;
+    border-color: rgb(78, 77, 77);
+    border-radius: 100%;
+    border-width: 2px;
+}
+.menu li a:active {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    background: linear-gradient(white, black);
+    padding: 10px;
+    width: 15px;
+    height: 15px;
+    font-size: 15px;
+    border-color: black;
+    border-style: double;
+    border-color: rgb(78, 77, 77);
+    border-radius: 100%;
+    border-width: 3px;
+}
+.container-videos {
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.521);
+    border-radius: 5px;
+    width: 500px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.gallery-videos-border {
+    width: inherit;
+    height: 650px;
+    padding: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-style: solid;
+    border-color: rgb(65, 65, 65);
+    border-radius: 5px;
+}
+/* CONTACTO */
+
+.background-contact {
+    background-image: url(../assets/img/jay-contacto.png);
+    background-size: 800px;
+    background-position-x: 300px;
+    background-repeat: no-repeat;
+    height: 1072px;
+}
+.contact-block {
+    margin-top: 40px;
+}
+.contact-form {
+    padding: 5px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+fieldset {
+    border-radius: 10px;
+    padding: 10px;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+legend {
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+input {
+    margin-top: 8px;
+}
