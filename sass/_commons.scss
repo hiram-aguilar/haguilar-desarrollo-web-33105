@@ -1,0 +1,151 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: black;
+    color: $color;
+    min-height: 100vh;
+    margin-right: 2em;
+    margin-left: 2em;
+    animation-name: fadein;
+    animation-duration: 2s;
+    @keyframes fadein {
+        from {opacity: 0%;}
+        to {opacity: 100%;}
+    }
+}
+
+.logo-header {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+nav {
+    height: auto;
+    ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    margin: 5px;
+    list-style-type: none;
+    font-size: 170%;
+    height: 120px;
+    font-family: 'Secular One';
+        li {
+        margin-left: 8px;
+        }
+    }
+}
+
+.music-notation {
+    margin-left: 8px;
+    font-size: 30px;
+    animation-name: rotatenote;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    @keyframes rotatenote {
+        from {transform: rotateY(0deg);}
+        to {transform: rotateY(360deg);}
+    }
+}
+    
+a {
+    color: $color;
+    text-decoration: none;
+    &:hover {
+        color: gray; 
+    }
+}
+
+.search-bar {
+    margin-top: 30px;
+    width: 100%;
+}
+.form-control {
+    opacity: 70%;
+    border-color: $color;
+}
+.bi-search {
+    width: 12px;
+}
+h1 {
+    font-family: 'Secular One';
+}
+p {
+    font-size: 16px;
+    margin-bottom: 16px;
+    line-height: 30px;
+    padding: 10px;
+}
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        height: 100%;
+        width: 60%;
+        a {
+            display: flex;
+            justify-content: center;
+            svg {
+                justify-content: center;
+                width: 35%;
+            }
+        }
+    }
+}
+
+.anchor-footer:hover {
+    transform: scale(1.5);
+    transition: 1s;
+}
+.copyright {
+    height: 100px;
+    margin: 1.5em;
+    font-size: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.box-mailing {
+    height: 50px;
+    margin-right: 1.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+.mailing { 
+    font-size: 10px;   
+    padding: 5px;
+    background-image: url(../assets/img/gradient_buttons.svg);
+    opacity: 50%;
+    background-size: cover;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &:hover {
+        opacity: 100%;
+        border-color: gray;
+    }
+}
+.mailing {
+    transition-duration: 1s;
+}
+.text-mail {
+    font-size: 10px;
+}

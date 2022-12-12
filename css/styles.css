@@ -1,663 +1,901 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Secular+One&display=swap");
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
+
 html {
-    font-size: 62.5%;
-    font-family: "Roboto Regular";
+  font-size: 62.5%;
 }
+
 body {
-    background-color: black;
-    color: white;
-    min-height: 100vh;
-    margin-right: 2em;
-    margin-left: 2em;
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+  margin-right: 2em;
+  margin-left: 2em;
+  -webkit-animation-name: fadein;
+          animation-name: fadein;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
 }
-.background-home {
-    background-image: url(../assets/img/jay-frontpage.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-position-y: -10em;
-    height: 100vh;
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
 }
+@keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
 .logo-header {
-    width: 100%;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+nav {
+  height: auto;
 }
 nav ul {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-evenly;
-    margin: 5px;
-    list-style-type: none;
-    font-size: 170%;
-    height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  margin: 5px;
+  list-style-type: none;
+  font-size: 170%;
+  height: 120px;
+  font-family: "Secular One";
 }
+nav ul li {
+  margin-left: 8px;
+}
+
+.music-notation {
+  margin-left: 8px;
+  font-size: 30px;
+  -webkit-animation-name: rotatenote;
+          animation-name: rotatenote;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+@-webkit-keyframes rotatenote {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+@keyframes rotatenote {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
 a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 a:hover {
-    color: gray;
+  color: gray;
 }
+
 .search-bar {
-    width: 100%;
+  margin-top: 30px;
+  width: 100%;
 }
+
 .form-control {
-    opacity: 70%;
-    border-color: white;
+  opacity: 70%;
+  border-color: white;
 }
-.btn {
-    height: 28.25px;
-    top: 8px;
-}
+
 .bi-search {
-    width: 12px;
+  width: 12px;
 }
+
+h1 {
+  font-family: "Secular One";
+}
+
 p {
-    font-size: 16px;
-    margin-bottom: 16px;
-    line-height: 30px;
-    padding: 10px;
+  font-size: 16px;
+  margin-bottom: 16px;
+  line-height: 30px;
+  padding: 10px;
 }
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+footer div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100%;
+  width: 60%;
+}
+footer div a {
+  display: flex;
+  justify-content: center;
+}
+footer div a svg {
+  justify-content: center;
+  width: 35%;
+}
+
+.anchor-footer:hover {
+  transform: scale(1.5);
+  transition: 1s;
+}
+
+.copyright {
+  height: 100px;
+  margin: 1.5em;
+  font-size: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.box-mailing {
+  height: 50px;
+  margin-right: 1.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.mailing {
+  font-size: 10px;
+  padding: 5px;
+  background-image: url(../assets/img/gradient_buttons.svg);
+  opacity: 50%;
+  background-size: cover;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mailing:hover {
+  opacity: 100%;
+  border-color: gray;
+}
+
+.mailing {
+  transition-duration: 1s;
+}
+
+.text-mail {
+  font-size: 10px;
+}
+
+.background-home {
+  background-image: url(../assets/img/jay-frontpage.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-position-y: -10em;
+  height: 100vh;
+}
+
 .main-frontpage {
-    margin-top: 1.5em;
+  margin-top: 40px;
 }
-.welcome {
-    background-color: rgba(0, 0, 0, 0.267);
-    border-radius: 5px;
+
+.welcome, .main-concerts .concerts-block, .bio-section {
+  background-color: rgba(0, 0, 0, 0.267);
+  border-radius: 5px;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-name: swipeup;
+          animation-name: swipeup;
 }
+@-webkit-keyframes swipeup {
+  from {
+    margin-top: 100%;
+  }
+  to {
+    margin-top: 0%;
+  }
+}
+@keyframes swipeup {
+  from {
+    margin-top: 100%;
+  }
+  to {
+    margin-top: 0%;
+  }
+}
+
 .video-frontpage {
-    margin-top: 40px;
-    margin-bottom: 40px;
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-right: 20px;
-    padding-left: 20px;
-    height: 0;
-    opacity: 80%;
-    overflow: hidden;
-    border: 1px solid white;
-    border-radius: 2px;
-    opacity: 80%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  position: relative;
+  padding: 0 20px 56.25% 20px;
+  height: 0;
+  overflow: hidden;
+  border: 1px solid white;
+  border-radius: 2px;
+  opacity: 70%;
 }
 .video-frontpage iframe {
-    position: absolute;
-    top:0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
+
 .news-section {
-    background-color: rgba(0, 0, 0, 0.267);
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: flex-start;
+  background-color: rgba(0, 0, 0, 0.267);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: flex-start;
 }
+
 .news-block {
-    display: flex;
-    flex-direction: column;;
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 }
+
 .text-alt {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-size: 15px;
-    line-height: 25px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 15px;
+  line-height: 25px;
 }
-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+
+/* Declaración de Áreas Home Page*/
+header {
+  grid-area: header;
 }
-.footer-icons {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    height: 100%;
-    width: 60%;
+
+nav {
+  grid-area: nav;
 }
-svg {
-    justify-content: center;
-    width: 35%;
+
+.search-bar {
+  grid-area: search;
 }
-.anchor-footer {
-    display: flex;
-    justify-content: center;
+
+.main-frontpage {
+  grid-area: main;
 }
-.copyright {
-    height: 100px;
-    margin: 1.5em;
-    font-size: 10px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+
+.welcome, .main-concerts .concerts-block, .bio-section {
+  grid-area: welcome;
 }
+
+.video-frontpage {
+  grid-area: video;
+}
+
+.news-section {
+  grid-area: news;
+}
+
 .box-mailing {
-    height: 50px;
-    margin-right: 1.5em;
+  grid-area: mail;
+}
+
+footer {
+  grid-area: footer;
+}
+
+.background-home {
+  display: grid;
+  gap: 20px;
+  grid-template-areas: "header" "nav" "search" "main" "mail" "footer";
+  grid-template-rows: auto;
+}
+
+@media (min-width: 480px) {
+  nav ul {
+    height: auto;
+  }
+  .search-bar {
+    width: 70%;
+  }
+  li {
+    font-size: 110%;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  p {
+    font-size: 18px;
+    line-height: 35px;
+  }
+  .mailing {
+    font-size: 13px;
+  }
+  .text-mail {
+    font-size: 13px;
+  }
+  .copyright {
+    font-size: 12px;
+  }
+}
+@media (min-width: 600px) {
+  nav ul {
+    height: 180px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 38px;
+  }
+  .mailing {
+    font-size: 12px;
+  }
+  .text-mail {
+    font-size: 12px;
+  }
+  .footer-icons {
+    width: 50%;
+  }
+  .copyright {
+    font-size: 12px;
+    padding-bottom: 1.5em;
+    justify-content: space-around;
+  }
+}
+@media (min-width: 768px) {
+  nav {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    align-items: center;
-}
-.mailing { 
-    font-size: 10px;   
-    padding: 5px;
-    background-image: url(../assets/img/gradient_buttons.svg);
-    opacity: 50%;
-    background-size: cover;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 5px;
+  }
+  nav ul {
+    font-size: 100%;
+    height: auto;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.mailing:hover {
-    opacity: 100%;
-    border-color: gray;
-}
-.mailing {
-    transition: 1s;
-}
-.text-mail {
-    font-size: 10px;
-}
-
-/* Declaración de Áreas */
-header {
-    grid-area: header;    
-}
-nav {
-    grid-area: nav;
-}
-.search-bar {
-    grid-area: search;
-}
-.main-frontpage {
-    grid-area: main;
-}
-.welcome {
-    grid-area: welcome;
-}
-.video-frontpage {
-    grid-area: video;
-}
-.news-section {
-    grid-area: news;
-}
-.box-mailing {
-    grid-area: mail;
-}
-footer {
-    grid-area: footer;
-}
-.background-home {
-    display: grid;
-    gap: 20px;
-    grid-template-areas:
-    "header"
-    "nav"
-    "search"
-    "main"
-    "mail"
-    "footer";
-    grid-template-rows: auto;
-}
-
-@media (min-width: 480px) {
-    nav ul {
-        height: 150px;
-    }
-    .search-bar {
-        width: 70%;
-    }
-    li {
-        font-size: 110%;
-    }
-    h1 {
-        font-size: 24px;
-    }
-    p {
-        font-size: 18px;
-        line-height: 35px;
-    }
-    .mailing {
-        font-size: 13px;
-    }
-    .text-mail {
-        font-size: 13px;
-    }
-    .copyright {
-        font-size: 12px;
-    }
-}
-
-@media (min-width: 600px) {
-    nav ul {
-        height: 180px;
-    }
-    p {
-        font-size: 20px;
-        line-height: 38px;
-    }
-    .mailing {
-        font-size: 12px;
-    }
-    .text-mail {
-        font-size: 12px;
-    }
-    .footer-icons {
-        width: 50%;
-    }
-    .copyright {
-        font-size: 12px;
-        padding-bottom: 1.5em;
-        justify-content: space-around;
-    }
-}
-
-@media (min-width: 768px) {
-    nav {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-    }
-    nav ul {
-        font-size: 200%;
-        height: 50px;
-        display: flex;
-        flex-direction: row;
-    }
-    ul li {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
-    ul {
-        width: 70%;
-    }
-    .search-bar {
-        width: 60%;
-    }
-    .main-frontpage {
-        display: grid;
-        grid-template-areas:
-        "welcome  news"
-        "video    news";
-        grid-template-rows: auto;
-        grid-template-columns: 40% 40%;
-        grid-column-gap: 20%;
-    }
-    .footer-icons {
-        width: 40%;
-    }
-    .anchor-footer:hover {
-        transform: scale(1.5);
-        transition: 1s;
-    }
-    .copyright {
-        font-size: 14px;
-    }
-}
-
-@media (min-width: 1024px) {
-    .main-frontpage {
-        grid-template-rows: auto;
-    }
-    .search-bar {
-        width: 40%;
-        margin-bottom: 1.5em;
-    }
-    nav {
-        margin-bottom: 1.5em;
-    }
-    .footer-icons {
-        width: 30%;
-    }
-}
-
-/* BIO */
-.background-bio {
-    background-image: url(../assets/img/jay-bio.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-    background-position-x: -180px;
-    height: 100vh;
-}
-.main-bio {
-    margin-top: 1.5em;
-}
-.bio-section {
-    background-color: rgba(0, 0, 0, 0.267);
-    border-radius: 5px;
-}
-.team-section {
-    margin-top: 20px;
-    margin-left: 0;
-    padding-top: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.473);
-    display: flex;
-    flex-direction: column;
-}
-.team-block {
-    padding: 10px;
-}
-.image-team {
-    width: 100px;
-    height: 120px;
-    object-fit: cover;
-    margin-left: 12px;
-    padding: 5px;
-    float: right;
-}
-.team-block {
-    margin-top: 10px;
-    margin-bottom: 30px;
-    line-height: 20px;
-}
-
-/* Declaración de Áreas */
-.main-bio {
-    grid-area: bio;
-}
-.bio-section {
-    grid-area: bio-section;
-}
-.team-section {
-    grid-area: team-section;
-}
-
-.background-bio {
-    display: grid;
-    gap: 20px;
-    grid-template-areas: 
-    "header"
-    "nav"
-    "search"
-    "bio"
-    "mail"
-    "footer";
-    grid-template-rows: auto;
-}
-
-@media (min-width: 480px) {
-    .background-bio {
-        background-position-x: -120px;
-    }
-}
-
-@media (min-width: 600px) {
-    .background-bio {
-        background-position-x: -50px;
-    }
-}
-
-@media (min-width: 768px) {
-    .background-bio {
-    background-position-x: center;
-    }
-    .main-bio {
-        display: grid;
-        grid-template-areas: 
-        "bio-section team-section";
-        grid-template-rows: auto;
-        grid-template-columns: 40% 30%;
-        grid-column-gap: 30%;
-    }
-    .team-section {
-        border: none;
-        background-color: rgba(0, 0, 0, 0.267);
-        border-radius: 5px;
-        padding-top: 0;
-        margin-top: 150px;
-    }
-}
-
-@media (min-width: 1024px) {
-    .team-section {
-        margin-top: 280px;
-    }
-}
-
-/* CONCIERTOS */
-
-.background-concerts {
-    background-image: url(../assets/img/jay-conciertos.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position-y: 180px;
-    background-position-x: center;
-    height: 100vh;
-}
-.main-concerts {
-    background-color: rgba(0, 0, 0, 0.253);
-    border-radius: 15px;
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    align-content: flex-start;    
-}
-.concerts-list {
-    line-height: 30px;
-    font-size: 14px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    }
-.concerts-list .contain {
-    font-size: 12px;
-    padding-left: 15px;
-}
-.ticket-reserve {
-    margin-top: 10px;
-    margin-bottom: 5px;
-    font-size: 12px;
-    font-style: italic;
-}
-
-/* Declaración de Áreas */
-.main-concerts {
-    grid-area: concerts;
-}
-.background-concerts {
-    display: grid;
-    gap: 20px;
-    grid-template-areas:
-    "header"
-    "nav"
-    "search" 
-    "concerts"
-    "block-concerts"
-    "mail"
-    "footer";
-    grid-row: auto;
-}
-
-@media (min-width: 480px) {
-    }
-    .concerts-list {
-        font-size: 15px
-    }
-
-@media (min-width: 600px) {
-    .main-concerts {
-        width: 500px;
-    }
-    .concerts-list {
-        font-size: 16px
-    } 
-}
-
-@media (min-width: 768px) {
-    .concerts-list {
-        font-size: 17px
-        }
-    }
-
-@media (min-width: 1024px) {
-    .concerts-list {
-        font-size: 18px
-    }
-}
-
-
-/* GALERÍA */
-.background-gallery {
-    background-image: url(../assets/img/jay-galeria.png);
-    background-size: 400px;
-    background-repeat: no-repeat;
-    background-position-x: 420px;
-    height: 1450px;
-}
-.main-gallery {
-    margin-top: 40px;
-    margin-bottom: 40px;
-    margin-left: 30px;
+    flex-direction: row;
+  }
+  nav ul li {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-left: 1.5em;
+  }
+  .search-bar {
+    width: 60%;
+  }
+  .main-frontpage {
+    display: grid;
+    grid-template-areas: "welcome  news" "video    news";
+    grid-template-rows: auto;
+    grid-template-columns: 40% 40%;
+    grid-column-gap: 20%;
+  }
+  .footer-icons {
+    width: 40%;
+  }
+  .copyright {
+    font-size: 14px;
+  }
 }
-.title-gallery {
-    color: black;
-    margin-bottom: 10px;
-    text-align: center;
+@media (min-width: 1024px) {
+  .main-frontpage {
+    grid-template-rows: auto;
+  }
+  .search-bar {
+    width: 40%;
+    margin-bottom: 1.5em;
+  }
+  nav {
+    margin-bottom: 1.5em;
+  }
+  .footer-icons {
+    width: 35%;
+  }
 }
+/* BIO */
+.background-bio {
+  background-image: url(../assets/img/jay-bio.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  background-position-x: -180px;
+  height: 100vh;
+}
+
+.main-bio {
+  margin-top: 40px;
+}
+
+.team-section {
+  margin-top: 20px;
+  margin-left: 0;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.473);
+  display: flex;
+  flex-direction: column;
+}
+
+.team-block {
+  padding: 10px;
+}
+
+.image-team {
+  width: 100px;
+  height: 120px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-left: 12px;
+  padding: 5px;
+  float: right;
+}
+
+.team-block {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  line-height: 20px;
+}
+
+/* Declaración de Áreas */
+.main-bio {
+  grid-area: bio;
+}
+
+.bio-section {
+  grid-area: bio-section;
+}
+
+.team-section {
+  grid-area: team-section;
+}
+
+.background-bio {
+  display: grid;
+  gap: 20px;
+  grid-template-areas: "header" "nav" "search" "bio" "mail" "footer";
+  grid-template-rows: auto;
+}
+
+@media (min-width: 480px) {
+  .background-bio {
+    background-position-x: -120px;
+  }
+}
+@media (min-width: 600px) {
+  .background-bio {
+    background-position-x: -50px;
+  }
+}
+@media (min-width: 768px) {
+  .background-bio {
+    background-position-x: center;
+  }
+  .main-bio {
+    display: grid;
+    grid-template-areas: "bio-section team-section";
+    grid-template-rows: auto;
+    grid-template-columns: 40% 30%;
+    grid-column-gap: 30%;
+  }
+  .team-section {
+    border-top: 0px transparent;
+    background-color: rgba(0, 0, 0, 0.267);
+    border-radius: 5px;
+    padding-top: 0;
+    margin-top: 160px;
+  }
+}
+@media (min-width: 1024px) {
+  .team-section {
+    margin-top: 280px;
+  }
+}
+/* CONCIERTOS */
+.background-concerts {
+  background-image: url(../assets/img/jay-conciertos.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: none;
+  background-position-x: center;
+  background-position-y: 200px;
+  height: 100vh;
+}
+
+.main-concerts {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+}
+.main-concerts .concerts-block {
+  line-height: 20px;
+  font-size: 14px;
+}
+.main-concerts .concerts-block .concerts-list {
+  padding-left: 15px;
+  height: auto;
+}
+.main-concerts .concerts-block .concerts-list a {
+  margin-bottom: 25px;
+}
+
+.ticket-reserve {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-style: italic;
+}
+
+/* Declaración de Áreas */
+.main-concerts {
+  grid-area: concerts;
+}
+
+.background-concerts {
+  display: grid;
+  gap: 20px;
+  grid-template-areas: "header" "nav" "search" "concerts" "mail" "footer";
+  grid-template-rows: auto;
+}
+
+@media (min-width: 480px) {
+  .main-concerts {
+    width: auto;
+  }
+}
+@media (min-width: 600px) {
+  .main-concerts {
+    width: 550px;
+  }
+}
+@media (min-width: 768px) {
+  .main-concerts {
+    width: 600px;
+  }
+}
+@media (min-width: 1024px) {
+  .main-concerts {
+    width: 700px;
+  }
+}
+
+@media (min-width: 480px) {
+  .concerts-list {
+    font-size: 17px;
+  }
+}
+@media (min-width: 600px) {
+  .concerts-list {
+    font-size: 18px;
+  }
+}
+@media (min-width: 768px) {
+  .concerts-list {
+    font-size: 19px;
+  }
+}
+@media (min-width: 1024px) {
+  .concerts-list {
+    font-size: 20px;
+  }
+}
+
+/* GALERÍA */
+.background-gallery {
+  background-image: url(../assets/img/jay-galeria.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: none;
+  background-position-x: -80px;
+  background-position-y: -120px;
+  height: 100vh;
+}
+
+.main-gallery {
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-name: swipeup;
+          animation-name: swipeup;
+}
+
+.block-gallery {
+  margin-top: 40px;
+  background-color: rgba(0, 0, 0, 0.267);
+  border-radius: 5px;
+}
+
+.container-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.title-photos {
+  color: black;
+  margin-bottom: 10px;
+  height: 20%;
+  text-align: center;
+}
+
 .container-photos {
-    margin-top: 20px;
-    background-color: rgba(255, 255, 255, 0.521);
-    border-radius: 5px;
-    width: 400px;
-    padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  background-color: rgba(255, 255, 255, 0.521);
+  border-radius: 5px;
+  padding: 10px;
 }
-ul, li {
-    padding: 0;
-    margin: 0;
-    list-style: none;
+
+.carousel-inner {
+  display: flex;
+  align-items: center;
+  height: 530px;
 }
-ul.slider {
-    position: relative;
-    width: 390px;
-    height: 600px;
+
+.carousel-item img {
+  border: 1px solid white;
 }
-ul.slider li {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    opacity: 0;
-    width: inherit;
-    height: inherit;
-    transition: opacity 0.8s;
-    border-style: solid;
-    border-radius: 5px;
-    border-color: rgb(65, 65, 65);
+
+.d-block {
+  border-radius: 5px;
 }
-ul.slider li img {
-    width: 100%;
-    height: 600px;
-    object-fit: cover;
+
+.carousel-control-prev, .carousel-control-next {
+  margin-top: 250px;
+  margin-bottom: 250px;
+  width: 30px;
+  border-radius: 100%;
+  background-color: rgba(255, 255, 255, 0.521);
 }
-ul.slider li:first-child {
-    opacity: 1; 
+
+.container-video {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-right: 20px;
+  padding-left: 20px;
+  height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
-ul.slider li:target {
-    opacity: 1;
+
+.sub-container-videos {
+  background-color: rgba(255, 255, 255, 0.521);
+  border-radius: 5px;
+  padding: 10px;
 }
-.menu {
-    text-align: center;
-    margin: 20px;
+
+.youtube-video {
+  border: 1px solid white;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
-.menu li {
-    display: inline-block;
-    text-align: center;
+
+/* Declaración de Áreas */
+.main-gallery {
+  grid-area: gallery;
 }
-.menu li a {
-    display: inline-block;
-    color: white;
-    text-decoration: none;
-    background: linear-gradient(black, white);
-    padding: 10px;
-    width: 15px;
-    height: 15px;
-    font-size: 15px;
-    border-color: black;
-    border-style: inset;
-    border-color: rgb(78, 77, 77);
-    border-radius: 100%;
-    border-width: 2px;
+
+.title-gallery {
+  grid-area: title-gallery;
 }
-.menu li a:active {
-    display: inline-block;
-    color: white;
-    text-decoration: none;
-    background: linear-gradient(white, black);
-    padding: 10px;
-    width: 15px;
-    height: 15px;
-    font-size: 15px;
-    border-color: black;
-    border-style: double;
-    border-color: rgb(78, 77, 77);
-    border-radius: 100%;
-    border-width: 3px;
+
+.container-photos {
+  grid-area: photos;
 }
+
 .container-videos {
-    margin-top: 20px;
-    background-color: rgba(255, 255, 255, 0.521);
-    border-radius: 5px;
-    width: 500px;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  grid-area: videos;
 }
-.gallery-videos-border {
-    width: inherit;
-    height: 650px;
-    padding: 3px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    border-style: solid;
-    border-color: rgb(65, 65, 65);
+
+.background-gallery {
+  display: grid;
+  grid-template-areas: "header" "nav" "search" "gallery" "mail" "footer";
+  grid-row: auto;
+  gap: 20px;
+}
+
+@media (min-width: 480px) {
+  .background-gallery {
+    background-position-y: -180px;
+  }
+  .carousel-inner {
+    height: 750px;
+  }
+  .container-photos {
+    height: 820px;
+  }
+  .carousel-control-prev, .carousel-control-next {
+    height: 30px;
+    margin-top: 320px;
+  }
+}
+@media (min-width: 600px) {
+  .background-gallery {
+    background-position-y: -280px;
+  }
+  .carousel-inner {
+    height: 970px;
+  }
+  .container-photos {
+    height: 1040px;
+  }
+  .carousel-control-prev, .carousel-control-next {
+    margin-top: 450px;
+  }
+}
+@media (min-width: 768px) {
+  .background-gallery {
+    background-position-y: -170px;
+  }
+  .block-gallery {
+    display: grid;
+    grid-template-areas: "title-gallery  title-gallery" "photos         videos";
+    grid-row: auto;
+    grid-column: 45% 45%;
+    gap: 10%;
+    background-color: none;
+  }
+  .carousel-inner {
+    height: 600px;
+  }
+  .carousel-control-prev, .carousel-control-next {
+    margin-top: 250px;
+  }
+  .container-photos {
+    height: 670px;
+  }
+  .container-videos {
+    margin-top: 100px;
+    height: 1000px;
+  }
+}
+@media (min-width: 1024px) {
+  .background-gallery {
+    background-size: 60%;
+  }
+  .block-gallery {
+    background-color: rgba(0, 0, 0, 0.267);
     border-radius: 5px;
+  }
+  .container-photos {
+    height: 1000px;
+    margin: 0;
+  }
+  .carousel-inner {
+    height: 900px;
+  }
+  .carousel-control-prev, .carousel-control-next {
+    margin-top: 420px;
+    height: 40px;
+    width: 40px;
+  }
+  .container-videos {
+    margin-top: 0;
+  }
 }
 /* CONTACTO */
+.background-contact {
+  background-image: url(../assets/img/jay-contacto.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.contact-main {
+  margin-top: 40px;
+}
+
+.contact-block {
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-name: swipeup;
+          animation-name: swipeup;
+  display: flex;
+  flex-direction: column;
+}
+
+fieldset {
+  border-radius: 10px;
+  padding: 10px;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.form-select {
+  opacity: 70%;
+  border-color: white;
+}
+
+legend {
+  padding: 0;
+}
+
+.contact-block {
+  grid-area: contact;
+}
+
+.contact-title {
+  grid-area: contact-title;
+}
+
+.personal-data {
+  grid-area: personal-data;
+}
+
+.contact-data {
+  grid-area: contact-data;
+}
+
+.comments {
+  grid-area: comments;
+}
 
 .background-contact {
-    background-image: url(../assets/img/jay-contacto.png);
-    background-size: 800px;
-    background-position-x: 300px;
-    background-repeat: no-repeat;
-    height: 1072px;
+  display: grid;
+  grid-template-areas: "header" "nav" "search" "contact" "mail" "footer";
+  grid-template-rows: auto;
+  gap: 20px;
 }
-.contact-block {
-    margin-top: 40px;
+
+@media (min-width: 480px) {
+  .responsive-font {
+    font-size: 1.2em;
+  }
 }
-.contact-form {
-    padding: 5px;
-    font-size: 14px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+@media (min-width: 600px) {
+  .background-contact {
+    background-position-y: 20px;
+  }
+  .responsive-font {
+    font-size: 1.3em;
+  }
 }
-fieldset {
-    border-radius: 10px;
-    padding: 10px;
-    border-color: rgba(255, 255, 255, 0.5);
+@media (min-width: 768px) {
+  .background-contact {
+    background-position-y: 100px;
+    background-position-x: 30px;
+  }
+  .contact-block {
+    display: grid;
+    grid-template-areas: "contact-title  contact-title" "personal-data  contact-data" "comments       comments";
+    grid-template-columns: 47.5% 47.5%;
+    grid-column-gap: 5%;
+  }
+  .responsive-font {
+    font-size: 1.4em;
+  }
 }
-legend {
-    margin-left: 20px;
-    font-size: 16px;
-    font-weight: bold;
-}
-input {
-    margin-top: 8px;
-}
+@media (min-width: 1024px) {
+  .background-contact {
+    background-size: 80%;
+    background-position-x: center;
+    background-position-y: 140px;
+  }
+  .responsive-font {
+    font-size: 1.5em;
+  }
+}/*# sourceMappingURL=styles.css.map */

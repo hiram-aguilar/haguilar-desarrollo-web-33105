@@ -1,0 +1,685 @@
+@import "globalvar";
+@import "fonts";
+@import "commons";
+
+@mixin background ($repeat, $size, $position) {
+    background-repeat: $repeat;
+    background-size: $size;
+    background-position: $position;
+}
+@mixin flex ($dis, $dir) {
+    display: $dis;
+    flex-direction: $dir;
+}
+
+.background-home {
+    background-image: url(../assets/img/jay-frontpage.png);
+    @include background(no-repeat, cover, center);
+    background-position-y: -10em;
+    height: 100vh;   
+}
+.main-frontpage {
+    margin-top: $mtop;
+}
+
+.welcome {
+    background-color: $bgtext;
+    border-radius: $rad;
+    animation-duration: 3s;
+    animation-name: swipeup;
+    @keyframes swipeup {
+        from {margin-top: 100%;}
+        to {margin-top: 0%;}
+    }
+}
+
+.video-frontpage {
+    margin-top: $mtop;
+    margin-bottom: $mtop;
+    position: relative;
+    padding: 0 calc($mtop/2) 56.25% calc($mtop/2);
+    height: 0;
+    overflow: hidden;
+    border: 1px solid white;
+    border-radius: 2px;
+    opacity: 70%;
+    iframe {
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+.news-section {
+    background-color: $bgtext;
+    border-radius: $rad;
+    @include flex (flex, column);
+    justify-content: flex-start;
+    align-content: flex-start;
+}
+.news-block {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.text-alt {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 15px;
+    line-height: 25px;
+}
+
+/* Declaración de Áreas Home Page*/
+
+header {
+    grid-area: header;    
+}
+nav {
+    grid-area: nav;
+}
+.search-bar {
+    grid-area: search;
+}
+.main-frontpage {
+    grid-area: main;
+}
+.welcome {
+    grid-area: welcome;
+}
+.video-frontpage {
+    grid-area: video;
+}
+.news-section {
+    grid-area: news;
+}
+.box-mailing {
+    grid-area: mail;
+}
+footer {
+    grid-area: footer;
+}
+.background-home {
+    display: grid;
+    gap: 20px;
+    grid-template-areas:
+    "header"
+    "nav"
+    "search"
+    "main"
+    "mail"
+    "footer";
+    grid-template-rows: auto;
+}
+
+@media (min-width: 480px) {
+    nav ul {
+        height: auto;
+    }
+    .search-bar {
+        width: 70%;
+    }
+    li {
+        font-size: 110%;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    p {
+        font-size: 18px;
+        line-height: 35px;
+    }
+    .mailing {
+        font-size: 13px;
+    }
+    .text-mail {
+        font-size: 13px;
+    }
+    .copyright {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 600px) {
+    nav ul {
+        height: 180px;
+    }
+    p {
+        font-size: 20px;
+        line-height: 38px;
+    }
+    .mailing {
+        font-size: 12px;
+    }
+    .text-mail {
+        font-size: 12px;
+    }
+    .footer-icons {
+        width: 50%;
+    }
+    .copyright {
+        font-size: 12px;
+        padding-bottom: 1.5em;
+        justify-content: space-around;
+    }
+}
+
+@media (min-width: 768px) {
+    nav {
+        @include flex (flex, row);
+        justify-content: flex-end;
+        ul {
+            font-size: 100%;
+            height: auto;
+            @include flex (flex, row);
+            li {
+                @include flex (flex, row);
+                justify-content: space-between;
+                margin-left: 1.5em;
+            }
+        }
+    }
+    .search-bar {
+        width: 60%;
+    }
+    .main-frontpage {
+        display: grid;
+        grid-template-areas:
+        "welcome  news"
+        "video    news";
+        grid-template-rows: auto;
+        grid-template-columns: 40% 40%;
+        grid-column-gap: 20%;
+    }
+    .footer-icons {
+        width: 40%;
+    }
+    
+    .copyright {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .main-frontpage {
+        grid-template-rows: auto;
+    }
+    .search-bar {
+        width: 40%;
+        margin-bottom: 1.5em;
+    }
+    nav {
+        margin-bottom: 1.5em;
+    }
+    .footer-icons {
+        width: 35%;
+    }
+}
+
+/* BIO */
+
+.background-bio {
+    background-image: url(../assets/img/jay-bio.png);
+    @include background(no-repeat, cover, top);
+    background-position-x: -180px;
+    height: 100vh;
+}
+.main-bio {
+    margin-top: 40px;
+}
+.bio-section {
+    @extend .welcome
+}
+.team-section {
+    margin-top: 20px;
+    margin-left: 0;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.473);
+    @include flex (flex, column);
+}
+.team-block {
+    padding: 10px;
+}
+.image-team {
+    width: 100px;
+    height: 120px;
+    object-fit: cover;
+    margin-left: 12px;
+    padding: 5px;
+    float: right;
+}
+.team-block {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    line-height: 20px;
+}
+
+/* Declaración de Áreas */
+
+.main-bio {
+    grid-area: bio;
+}
+.bio-section {
+    grid-area: bio-section;
+}
+.team-section {
+    grid-area: team-section;
+}
+.background-bio {
+    display: grid;
+    gap: 20px;
+    grid-template-areas: 
+    "header"
+    "nav"
+    "search"
+    "bio"
+    "mail"
+    "footer";
+    grid-template-rows: auto;
+}
+
+@media (min-width: 480px) {
+    .background-bio {
+        background-position-x: -($mtop*3);
+    }
+}
+
+@media (min-width: 600px) {
+    .background-bio {
+        background-position-x: -($mtop+10);
+    }
+}
+
+@media (min-width: 768px) {
+    .background-bio {
+    background-position-x: center;
+    }
+    .main-bio {
+        display: grid;
+        grid-template-areas: 
+        "bio-section team-section";
+        grid-template-rows: auto;
+        grid-template-columns: 40% 30%;
+        grid-column-gap: 30%;
+    }
+    .team-section {
+        border-top: 0px transparent;
+        background-color: $bgtext;
+        border-radius: $rad;
+        padding-top: 0;
+        margin-top: $mtop*4;
+    }
+}
+
+@media (min-width: 1024px) {
+    .team-section {
+        margin-top: $mtop*7;
+    }
+}
+
+/* CONCIERTOS */
+
+.background-concerts {
+    background-image: url(../assets/img/jay-conciertos.png);
+    @include background(no-repeat, contain, none);
+    background-position-x: center;
+    background-position-y: $mtop*5;
+    height: 100vh;
+}
+.main-concerts {
+    margin-top: $mtop;   
+    @include flex (flex, column);
+    align-content: flex-start;    
+    .concerts-block {
+        @extend .welcome;
+        line-height: 20px;
+        font-size: 14px;
+        .concerts-list {
+            padding-left: 15px;
+            height: auto;
+            a {
+                margin-bottom: 25px;
+            }
+        }
+    }
+}
+
+.ticket-reserve {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-style: italic;
+}
+
+/* Declaración de Áreas */
+
+.main-concerts {
+    grid-area: concerts;
+}
+.background-concerts {
+    display: grid;
+    gap: 20px;
+    grid-template-areas:
+    "header"
+    "nav"
+    "search" 
+    "concerts"
+    "mail"
+    "footer";
+    grid-template-rows: auto;
+}
+
+.main-concerts {
+    @media (min-width: 480px) {
+        width: auto;}
+    @media (min-width: 600px) {
+        width: 550px;}
+    @media (min-width: 768px) {
+        width: 600px;}
+    @media (min-width: 1024px) {
+        width: 700px;}
+    }
+
+.concerts-list {
+    @media (min-width: 480px) {
+        font-size: 17px;}
+    @media (min-width: 600px) {
+        font-size: 18px;}
+    @media (min-width: 768px) {
+        font-size: 19px;}
+    @media (min-width: 1024px) {
+        font-size: 20px;}
+    }
+
+/* GALERÍA */
+
+.background-gallery {
+    background-image: url(../assets/img/jay-galeria.png);
+    @include background(no-repeat, cover, none);
+    background-position-x: -($mtop*2);
+    background-position-y: -($mtop*3);
+    height: 100vh;   
+}
+.main-gallery {
+    animation-duration: 3s;
+    animation-name: swipeup;
+}
+.block-gallery {
+    margin-top: $mtop;
+    background-color: $bgtext;
+    border-radius: 5px;
+}
+.container-gallery { 
+    @include flex (flex, column);
+    align-items: flex-start;
+}
+.title-photos {
+    color: black;
+    margin-bottom: 10px;
+    height: 20%;
+    text-align: center;
+}
+.container-photos {
+    @include flex (flex, column);
+    justify-items: center;
+    background-color: rgba(255, 255, 255, 0.521);
+    border-radius: $rad;
+    padding: 10px;
+}
+.carousel-inner {
+    display: flex;
+    align-items: center;
+    height: 530px;
+}
+.carousel-item img {
+    border: 1px solid white;
+}
+.d-block {
+    border-radius: 5px;
+}
+.carousel-control-prev, .carousel-control-next {
+    margin-top: 250px;
+    margin-bottom: 250px;
+    width: 30px;
+    border-radius: 100%;
+    background-color:  rgba(255, 255, 255, 0.521);
+}
+.container-video {
+    margin-top: $mtop;
+    margin-bottom: $mtop;
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-right: calc($mtop / 2);
+    padding-left: calc($mtop / 2);
+    height: 0;
+    overflow: hidden;
+    @include flex (flex, column);
+}
+.sub-container-videos {
+    background-color: rgba(255, 255, 255, 0.521);
+    border-radius: 5px;
+    padding: 10px;
+}
+.youtube-video {
+    border: 1px solid white;
+    top:0;
+    left: 0;
+    width: 100%;
+}
+
+/* Declaración de Áreas */
+
+.main-gallery {
+    grid-area: gallery;
+}
+.title-gallery {
+    grid-area: title-gallery;
+}
+.container-photos {
+    grid-area: photos;
+}
+.container-videos {
+    grid-area: videos;
+}
+
+.background-gallery {
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "nav"
+    "search"
+    "gallery"
+    "mail"
+    "footer";
+    grid-row: auto;
+    gap: 20px;
+}
+
+@media (min-width: 480px) {
+    .background-gallery {
+        background-position-y: -180px;
+    }
+    .carousel-inner {
+        height: 750px;
+    }
+    .container-photos {
+        height: 820px;
+    }
+    .carousel-control-prev, .carousel-control-next {
+        height: 30px;
+        margin-top: 320px;
+    }
+}
+
+@media (min-width: 600px) {
+    .background-gallery {
+        background-position-y: -280px;
+    }
+    .carousel-inner {
+        height: 970px;
+    }
+    .container-photos {
+        height: 1040px;
+    }
+    .carousel-control-prev, .carousel-control-next {
+        margin-top: 450px;
+    }
+}
+
+@media (min-width: 768px) {
+    .background-gallery {
+        background-position-y: -170px;
+    }
+    .block-gallery {
+        display: grid;
+        grid-template-areas:
+        "title-gallery  title-gallery"
+        "photos         videos";
+        grid-row: auto;
+        grid-column: 45% 45%;
+        gap: 10%;
+        background-color: none;
+    }
+    .carousel-inner {
+        height: 600px;
+    }
+    .carousel-control-prev, .carousel-control-next {
+        margin-top: 250px;
+    }
+    .container-photos {
+        height: 670px;
+    }
+    .container-videos {
+        margin-top: 100px;
+        height: 1000px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .background-gallery {
+        background-size: 60%;
+    }
+    .block-gallery {
+        background-color: $bgtext;
+        border-radius: $rad;
+    }
+    .container-photos {
+        height: 1000px;
+        margin: 0;
+    }
+    .carousel-inner {
+        height: 900px; 
+    }
+    .carousel-control-prev, .carousel-control-next  {
+        margin-top: 420px;
+        height: 40px;
+        width: 40px;
+    }
+    .container-videos {
+        margin-top: 0;
+    }
+}
+
+/* CONTACTO */
+
+.background-contact {
+    background-image: url(../assets/img/jay-contacto.png);
+    background-repeat: no-repeat;
+    background-size:contain;
+}
+.contact-main {
+    margin-top: 40px;
+}
+.contact-block {
+    animation-duration: 3s;
+    animation-name: swipeup;
+    @include flex (flex, column);
+}
+fieldset {
+    border-radius: 10px;
+    padding: 10px;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+.form-select {
+    opacity: 70%;
+    border-color: $color;
+}
+legend {
+    padding: 0;
+}
+
+// Declaración de Áreas
+
+.contact-block {
+    grid-area: contact;
+}
+.contact-title {
+    grid-area: contact-title;
+}
+.personal-data {
+    grid-area: personal-data;
+}
+.contact-data {
+    grid-area: contact-data;
+}
+.comments {
+    grid-area: comments;
+}
+
+.background-contact {
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "nav"
+    "search"
+    "contact"
+    "mail"
+    "footer";
+    grid-template-rows: auto;
+    gap: 20px;
+}
+
+@media (min-width: 480px) {
+    .responsive-font {
+        font-size: 1.2em;
+    }
+}
+
+@media (min-width: 600px) {
+    .background-contact {
+        background-position-y: 20px;
+    }
+    .responsive-font {
+        font-size: 1.3em;
+    }
+}
+
+@media (min-width: 768px) {
+    .background-contact {
+        background-position-y: 100px;
+        background-position-x: 30px;
+    }
+    .contact-block {
+        display: grid;
+        grid-template-areas:
+        "contact-title  contact-title"
+        "personal-data  contact-data"
+        "comments       comments";
+        grid-template-columns: 47.5% 47.5%;
+        grid-column-gap: 5%;
+    }
+    .responsive-font {
+        font-size: 1.4em;
+    }
+}
+
+@media (min-width: 1024px) {
+    .background-contact {
+        background-size: 80%;
+        background-position-x: center;
+        background-position-y: 140px;
+    }
+    .responsive-font {
+        font-size: 1.5em;
+    }
+}
