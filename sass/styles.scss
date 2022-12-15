@@ -408,8 +408,6 @@ footer {
     margin-top: $mtop;
     background-color: $bgtext;
     border-radius: 5px;
-}
-.container-gallery { 
     @include flex (flex, column);
     align-items: flex-start;
 }
@@ -425,6 +423,7 @@ footer {
     background-color: rgba(255, 255, 255, 0.521);
     border-radius: $rad;
     padding: 10px;
+    margin-bottom: 40px;
 }
 .carousel-inner {
     display: flex;
@@ -564,7 +563,7 @@ footer {
         border-radius: $rad;
     }
     .container-photos {
-        height: 1000px;
+        height: 1012px;
         margin: 0;
     }
     .carousel-inner {
